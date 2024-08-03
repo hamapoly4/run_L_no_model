@@ -15,7 +15,7 @@ const unsigned char TARGET = 90;
 *                                   コンストラクタ定義
 ----------------------------------------------------------------------------------------------*/
 Runner::Runner(const SonarSensor& sonarsensor, GyroSensor& gyrosensor,
-                        CalcPID& calcPID, LineTracer& linetracer/*, Walker& walker*/)
+                        CalcPID& calcpid, LineTracer& linetracer/*, Walker& walker*/)
   : mSonarSensor(sonarsensor), mGyroSensor(gyrosensor),
     mCalcPID(calcpid), mLineTracer(linetracer)/*, mWalker(walker)*/
 {
