@@ -30,14 +30,14 @@ void Runner::runL ()
     return;  /* 走行を開始しない */
   }
 
-  mWalker.Run(mCalculatio.ControlPID());
+  mWalker.Run(mCalculation.ControlPID());
 }
 
 /* 走行開始の判断をするメンバ関数定義 */
 bool Runner::runStart ()
 {
   int16_t sdist; /* 超音波センサの距離に関する変数 */
-  sdist = mSonarSensor.getDistance()  /* 障害物との距離を取得 */
+  sdist = mSonarSensor.getDistance();  /* 障害物との距離を取得 */
 
   /* 障害物との距離が-1cmより大きく、5cm未満か判定 */
   if (-1 < sdist && sdist < 5)

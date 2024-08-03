@@ -13,7 +13,7 @@ private:
     ev3api::Motor& mRightMotor;
 
 public:
-    Walker(ev3api::Motor& leftmotor, 3v3api::Motor& rightmotor);
+    Walker(ev3api::Motor& leftmotor, v3api::Motor& rightmotor);
 
     void Run(int turn);
 };
