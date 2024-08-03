@@ -9,8 +9,8 @@
 
 using namespace ev3api;
 
-Walker::Walker(Walker& leftmotor, Walker& rightmotor)
-    : mLeftMotor(leftmotor), mRightMotor(rightmotor)
+Walker::Walker(Motor& leftwheel, Motor& rightwheel)
+    : mLeftWheel(leftwheel), mRightWheel(rightwheel)
 {
     ;
 }

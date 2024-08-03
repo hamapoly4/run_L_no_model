@@ -5,15 +5,21 @@
  *  　　作成者：近藤　悠太
  *****************************************************************************/
 
+#ifndef EV3_APP_WALKER_H_
+#define EV3_APP_WALKER_H_
+
 #include "Motor.h"
 
 class Walker {
 private:
-    ev3api::Motor& mLeftMotor;
-    ev3api::Motor& mRightMotor;
+    const int PWM = 45;
+    ev3api::Motor& mLeftWheel;
+    ev3api::Motor& mRightWheel;
 
 public:
-    Walker(ev3api::Motor& leftmotor, v3api::Motor& rightmotor);
+    Walker(ev3api::Motor& leftwheel, v3api::Motor& rightwheel);
 
     void Run(int turn);
 };
+
+#endif  // EV3_APP_WALKER_H_
