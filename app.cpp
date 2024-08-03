@@ -27,7 +27,7 @@ Motor       gRightWheel(PORT_B);
 
 CalcPID gCalcPID(gColorSensor);
 LineTracer gLineTracer(gLeftWheel, gRightWheel);
-Runner gRunner(gSonarSensor, gGyroSensor, gCalcPID);
+Runner gRunner(gSonarSensor, gGyroSensor, gCalcPID, gLineTracer);
 
 /*----------------------------------------------------
 *                      内部結合
