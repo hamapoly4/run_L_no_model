@@ -9,7 +9,7 @@
 
 using namespace ev3api;
 
-const unsigned char TARGET = 90;
+const unsigned char Runner::TARGET = 90;
 
 /*--------------------------------------------------------------------------------------------
 *                                   コンストラクタ定義
