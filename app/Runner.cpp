@@ -6,6 +6,7 @@
  *****************************************************************************/
 
 #include "Runner.h"
+#include <stdio.h>
 
 using namespace ev3api;
 
@@ -45,6 +46,7 @@ void Runner::runL()
   {
     return; // 直進走行を開始しない！！
   }
+  printf("mrunstra_flg is true!!\n");
   wup_tsk(MAIN_TASK);   // メインタスクの起床
 
 }
