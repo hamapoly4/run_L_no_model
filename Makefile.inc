@@ -1,8 +1,8 @@
 mkfile_path := $(dir $(lastword $(MAKEFILE_LIST)))
 
 APPL_CXXOBJS += \
-	Walker.o \
-	Calculation.o \
+	LineTracer.o \
+	CalcPID.o \
 	Runner.o
 
 SRCLANG := c++
