@@ -17,7 +17,7 @@ private:
     ev3api::Motor& mRightWheel;
 
 public:
-    Walker(ev3api::Motor& leftwheel, v3api::Motor& rightwheel);
+    Walker(ev3api::Motor& leftwheel, ev3api::Motor& rightwheel);
 
     void Run(int turn);
 };
