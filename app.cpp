@@ -25,10 +25,9 @@ GyroSensor  gGyroSensor(PORT_4);
 Motor       gLeftWheel(PORT_C);
 Motor       gRightWheel(PORT_B);
 
-Calculation gCalcPID(gColorSensor);
+CalcPID gCalcPID(gColorSensor);
 LineTracer gLineTracer(gLeftWheel, gRightWheel);
-//Walker gWalker(gLeftWheel, gRightWheel);
-Runner gRunner(gSonarSensor, gGyroSensor, gCalculation, gWalker);
+Runner gRunner(gSonarSensor, gGyroSensor, gCalcPID);
 
 /*----------------------------------------------------
 *                      内部結合

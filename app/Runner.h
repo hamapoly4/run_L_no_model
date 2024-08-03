@@ -13,7 +13,6 @@
 #include "GyroSensor.h"
 #include "CalcPID.h"
 #include "LineTracer.h"
-#include "Walker.h"
 
 /*----------------------------------------------------
 *                  Runnerクラスの定義
@@ -25,7 +24,6 @@ private:
     ev3api::GyroSensor& mGyroSensor;
     CalcPID& mCalcPID;
     LineTracer& mLineTracer;
-    //Walker& mWalker;
 
     /* メンバ変数宣言 */
     unsigned char mrunline_flg = false;     // ライントレース走行開始フラグは降りた状態で定義
@@ -34,7 +32,7 @@ private:
 public:
     /* コンストラクタ宣言 */
     Runner(const ev3api::SonarSensor& sonarsensor, ev3api::GyroSensor& gyrosensor,
-                CalcPID& calcpid, LineTracer& linetracer/*, Walker& walker*/);
+                CalcPID& calcpid, LineTracer& linetracer);
 
     
     /* L字走行をするメンバ関数宣言 */
