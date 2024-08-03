@@ -10,10 +10,10 @@
 using namespace ev3api;
 
 /* 静的const付きメンバ定数の定義 */
-const float KP = 0.50;  // Pゲイン
-const float KI = 0.03;  // Iゲイン
-const float KD = 2;     // Dゲイン
-const int TARGET = 38;  // 目標値
+const float CalcPID::KP = 0.50;  // Pゲイン
+const float CalcPID::KI = 0.03;  // Iゲイン
+const float CalcPID::KD = 2;     // Dゲイン
+const int CalcPID::TARGET = 38;  // 目標値
 
 /*-------------------------------------------------------
 *                  コンストラクタ定義
