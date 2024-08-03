@@ -61,7 +61,7 @@ void main_task(intptr_t unused)
 /*----------------------------------------------------
 *                    ランナータスク
 *-----------------------------------------------------*/
-void runner_tsk(intptr_t exinf)
+void runner_task(intptr_t exinf)
 {
     gRunner.runL();
 
