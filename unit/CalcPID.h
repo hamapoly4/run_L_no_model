@@ -1,24 +1,26 @@
 /******************************************************************************
- *  ファイル名：Runner.h
- *　　　　内容：Runnerクラスの定義
+ *  ファイル名：CalcPID.h
+ *　　　　内容：CalcPIDクラスの定義
  *  　　作成日：2024/8/3
  *  　　作成者：近藤　悠太
  *****************************************************************************/
 
-#ifndef EV3_APP_CALCULATION_H_
-#define EV3_APP_CALCULATION_H_
+#ifndef EV3_APP_CALCPID_H_
+#define EV3_APP_CALCPID_H_
 
 /* ヘッダファイルのインクルード */
 #include "ColorSensor.h"
 
-class Calculation {
+class CalcPID {
 private:
-    /* constメンバ変数定義 */
+    /* constメンバオブジェクトの定義 */
     const ev3api::ColorSensor& mColorSensor;
-    const float KP = 0.50;  // Pゲイン
-    const float KI = 0.03;  // Iゲイン
-    const float KD = 2;     // Dゲイン
-    const int target = 38;  // 目標値
+
+    /* 静的const付きメンバ定数の宣言 */
+    static const float KP;      // Pゲイン
+    static const float KI;      // Iゲイン
+    static const float KD;      // Dゲイン
+    static const int TARGET;    // 目標値
 
     /* メンバ変数宣言 */
     int p_value;    // P制御から求めた値
@@ -29,14 +31,14 @@ private:
 
 public:
     /* コンストラクタ宣言 */
-    Calculation(const ev3api::ColorSensor& colorsensor);
+    CalcPID(const ev3api::ColorSensor& colorsensor);
 
     /* メンバ関数宣言 */
-    int CalcP();    // P演算
-    int CalcI();    // I演算
-    int CalcD();    // D演算
-    int ControlPID();   // PID制御から制御値を求める
+    int calcP();    // P演算
+    int calcI();    // I演算
+    int calcD();    // D演算
+    int calcPID();   // PID制御から制御値を求める
 
 };
 
-#endif  // EV3_APP_CALCULATION_H_
+#endif  // EV3_APP_CALCPID_H_

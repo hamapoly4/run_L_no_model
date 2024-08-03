@@ -1,18 +1,24 @@
 /******************************************************************************
- *  ファイル名：Calculation.cpp
- *　　　　内容：Calculationクラスの実施
+ *  ファイル名：CalcPID.cpp
+ *　　　　内容：CalcPIDクラスの実施
  *  　　作成日：2024/8/3
  *  　　作成者：近藤　悠太
  *****************************************************************************/
 
-#include "Calculation.h"
+#include "CalcPID.h"
 
 using namespace ev3api;
+
+/* 静的const付きメンバ定数の定義 */
+const float KP = 0.50;  // Pゲイン
+const float KI = 0.03;  // Iゲイン
+const float KD = 2;     // Dゲイン
+const int TARGET = 38;  // 目標値
 
 /*-------------------------------------------------------
 *                  コンストラクタ定義
 ---------------------------------------------------------*/
-Calculation::Calculation(const ColorSensor& colorsensor)
+CalcPID::CalcPID(const ColorSensor& colorsensor)
     : mColorSensor(colorsensor)
 {
     ;
@@ -21,14 +27,14 @@ Calculation::Calculation(const ColorSensor& colorsensor)
 /*-------------------------------------------------------
 *                   メンバ関数定義
 ---------------------------------------------------------*/
-int Calculation::CalcP()    // P演算
+int CalcPID::calcP()    // P演算
 {
-    diff = mColorSensor.getBrightness() - target;
+    diff = mColorSensor.getBrightness() - TARGET;
     p_value = KP * diff;
     return p_value;
 }
 
-int Calculation::CalcI()    // I演算
+int CalcPID::calcI()    // I演算
 {
     static int sum = 0;
     static unsigned char i = 0;
@@ -46,7 +52,7 @@ int Calculation::CalcI()    // I演算
     return i_value;
 }
 
-int Calculation::CalcD()    // D演算
+int CalcPID::calcD()    // D演算
 {
     static int old_diff = 0;
 
@@ -56,8 +62,8 @@ int Calculation::CalcD()    // D演算
     return d_value;
 }
 
-int Calculation::ControlPID()   // PID制御から制御値を求める
+int CalcPID::calcPID()   // PID制御から制御値を求める
 {
-    turn = CalcP() + CalcI() + CalcD();
+    turn = calcP() + calcI() + calcD();
     return turn;
 }
