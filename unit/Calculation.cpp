@@ -23,7 +23,7 @@ Calculation::Calculation(const ColorSensor& colorsensor)
 ---------------------------------------------------------*/
 int Calculation::CalcP()    // P演算
 {
-    diff = mcolorSensor.getBrightness() - target;
+    diff = mColorSensor.getBrightness() - target;
     p_value = KP * diff;
     return p_value;
 }
@@ -56,7 +56,7 @@ int Calculation::CalcD()    // D演算
     return d_value;
 }
 
-int Calculation::ControlPID();   // PID制御から制御値を求める
+int Calculation::ControlPID()   // PID制御から制御値を求める
 {
     turn = CalcP() + CalcI() + CalcD();
     return turn;
