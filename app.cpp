@@ -51,7 +51,7 @@ void main_task(intptr_t unused)
     slp_tsk();  /* メインタスクの起床待ち */
 
     /* 周期ハンドラ停止 */
-    stp_tsk(CYC_RUNNER);
+    stp_cyc(CYC_RUNNER);
 
     user_system_destroy();  /* 終了処理 */
 

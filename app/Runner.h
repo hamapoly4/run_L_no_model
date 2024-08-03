@@ -18,14 +18,12 @@
 *-----------------------------------------------------*/
 class Runner {
 private:
-    const SonarSensor& mSonarSensor;
-    const Calculation& mCalculation;
+    const ev3api::SonarSensor& mSonarSensor;    /* 超音波センサのconst参照オブジェクト */
+    Calculation& mCalculation;
     Walker& mWalker;
 
     /* メンバ変数宣言 */
     unsigned char mstrflg;   /* 走行開始フラグ */
-
-    const ev3api::SonarSensor& mSonarSensor;    /* 超音波センサのconst参照オブジェクト */
 
 public:
     /* コンストラクタ宣言 */
