@@ -76,6 +76,7 @@ void Runner::runStraStart()
     if (yaw_angle == TARGET)
     {
       mGyroSensor.reset();
+      printf("GyroSensor can reset!!\n");
       achi_cnt++;
     }
   }
